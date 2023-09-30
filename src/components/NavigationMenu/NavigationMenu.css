@@ -1,0 +1,16 @@
+/* NavigationMenu.css */
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between; /* Distribute tabs evenly */
+    width: 40%; /* Adjust the width as needed */
+    margin-left: auto; /* Push the menu to the right */
+  }
+  
+  .nav-tab {
+    font-size: 16px; /* Adjust the font size */
+    padding: 12px 20px; /* Adjust padding for tabs */
+    text-transform: uppercase; /* Uppercase text */
+    color: #fff; /* Text color */
+  }
+  

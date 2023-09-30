@@ -1,0 +1,25 @@
+header{
+    
+        display: 'flex';
+        justify-content: 'space-between';
+        align-items: 'center';
+        padding: '1rem';
+        background-color: '#f2f2f2';
+        border-bottom: '1px solid #ccc';
+    
+}
+
+.header {
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .cake-image {
+    background-image: url('cover.jpg'); 
+    height: 300px;
+  }
+  
+  .logo {
+    color: #fff; 
+  }
+  
