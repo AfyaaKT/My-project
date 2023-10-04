@@ -5,18 +5,21 @@ import Home from './pages/Home';
 import Cart from './pages/Cart';
 import Favorites from './pages/Favorites';
 import Products from './components/Products/Products';
-import Header from './components/Header/Header';
+import Layout from './pages/Layout';
 
 function App() {
   return (
     <div className="App">
-      <Header/>
+      <Layout>
+    
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/products" element={<Products />} />
       </Routes>
+      </Layout>
+      
     </div>
   );
 }
