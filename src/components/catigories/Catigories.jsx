@@ -1,7 +1,7 @@
 import React from 'react'
-import './body.css'
+import './catigories.css'
 
-const Body = () => {
+const Catigories = () => {
   return (
     <div className='catigories'>
         <div className='cake'></div>
@@ -13,4 +13,4 @@ const Body = () => {
   )
 }
 
-export default Body
+export default Catigories

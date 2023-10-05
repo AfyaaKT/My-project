@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import './products.css'
 
-function Product({ name, description, price, imageUrl }) {
+function Product({ name, description, price, imageUrl , onAddToCart }) {
   return (
     <Card className='product'
       sx={{
@@ -33,7 +33,12 @@ function Product({ name, description, price, imageUrl }) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button variant="contained" size="small" color="primary">
+      <Button
+          variant='contained'
+          size='small'
+          color='primary'
+          onClick={() => onAddToCart({ name, price , imageUrl , description })}
+        >
           Add to Cart
         </Button>
       </CardActions>

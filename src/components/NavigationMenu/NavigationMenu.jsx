@@ -2,7 +2,7 @@ import React from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import './NavigationMenu.css';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom, not MUI
+import { Link } from 'react-router-dom'; 
 
 function NavigationMenu() {
   return (
