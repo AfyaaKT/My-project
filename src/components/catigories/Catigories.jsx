@@ -4,10 +4,10 @@ import './catigories.css'
 const Catigories = () => {
   return (
     <div className='catigories'>
-        <div className='cake'></div>
-        <div className='cake'></div>
-        <div className='cake'></div>
-        <div className='cake'></div>
+        <div className=' one'></div>
+        <div className=' two'></div>
+        <div className=' three'></div>
+        <div className=' four'></div>
 
     </div>
   )

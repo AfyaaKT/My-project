@@ -1,32 +1,52 @@
-
 import React, { useState } from 'react';
-import './searchbar.css'
+import './searchbar.css'; 
 
-function SearchBar({ onSearch }) {
-  const [searchTerm, setSearchTerm] = useState('');
+import { data } from '../../data'; 
+
+function SearchBar() {
+  const [query, setQuery] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
 
   const handleInputChange = (e) => {
-    setSearchTerm(e.target.value);
+    const inputValue = e.target.value;
+    setQuery(inputValue);
+  
+    const results = data.filter((product) => {
+      if (product.title && inputValue) {
+        const productName = product.title.toLowerCase();
+        const searchTerm = inputValue.toLowerCase();
+        return productName.includes(searchTerm);
+      }
+      return false;
+    });
+  
+    console.log('Input Value:', inputValue);
+    console.log('Search Results:', results);
+  
+    setSearchResults(results);
   };
-
-  const handleSearch = () => {
-    onSearch(searchTerm);
-  };
+  
+  
 
   return (
-    <div className="search-bar">
+    <div className="search-container">
       <input
         type="text"
-        placeholder="Search..."
-        value={searchTerm}
+        placeholder="Search for cakes, cupcakes, cookies..."
+        value={query}
         onChange={handleInputChange}
-        className="search-input" 
       />
-      <button onClick={handleSearch} className="search-button">
-        Search
-      </button>
+      {searchResults.length > 0 && (
+        <div className="search-results">
+          {searchResults.map((product,index) => (
+            <div key={index} className="search-result-item">
+              <img src={product.imgUrl} alt={product.title} className='img' />
+              <h1>{product.title}</h1>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
-
   );
 }
 

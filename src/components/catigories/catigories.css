@@ -4,11 +4,48 @@
     align-items: center;
     
 }
-.cake{
-    background-color: antiquewhite;
+.one{
+    background-image: url('/public/images/catigory.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 
     border-radius: 50%;
     width: 200px;
     height: 200px;
     margin: 50px;
 }
+.two{
+    background-image: url('/public/images/catgory2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: 50px;
+}
+.three{
+    background-image: url('/public/images/catigory3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: 50px;
+}
+.four{
+    background-image: url('/public/images/catigory4.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: 50px;
+}
+

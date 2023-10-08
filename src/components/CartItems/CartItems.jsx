@@ -16,9 +16,19 @@ export const CartItemsProvider = ({children}) => {
         updatedCart.splice(index, 1);
         setCartItems(updatedCart);
       };  
+      const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
     return(
-        <Context.Provider value={{cartItems , setCartItems , addToCart , removeFromCart}}>
+        <Context.Provider value={{cartItems , setCartItems , addToCart , removeFromCart , open , setOpen ,
+        handleClose , handleClickOpen}}>
             {children}
         </Context.Provider>
     )

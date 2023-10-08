@@ -7,6 +7,8 @@ import Favorites from './pages/Favorites';
 import Products from './components/Products/Products';
 import Layout from './pages/Layout';
 import { CartItemsProvider } from './components/CartItems/CartItems';
+import SignUp from './pages/SignUp';
+import SignIn from './pages/SignIn';
 
 function App() {
   return (
@@ -16,10 +18,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/favorites" element={<Favorites />} />
-       
-       <Route path="/cart" element={<Cart />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/products" element={<Products />} />
-       
+        <Route path='/signUp' element={<SignUp/>} />
+        <Route path='/signIn' element={<SignIn/>} />
+
       </Routes>
       </CartItemsProvider>
       </Layout>
