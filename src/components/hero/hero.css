@@ -1,6 +1,6 @@
 
 .hero {
-    background-image: url('./cover.jpeg'); 
+    background-image: url('/public/images/cover.jpeg'); 
     background-size: cover;
     background-position: center;
     height: 100vh; 
@@ -41,6 +41,6 @@
   }
   
   .hero button:hover {
-    background-color: #ff5500; 
+    background-color: #18A0FB; 
   }
   

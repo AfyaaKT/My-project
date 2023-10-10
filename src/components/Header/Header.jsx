@@ -16,20 +16,21 @@ import './header.css'
 function Header() {
 
 
-  const handleSearch = (searchTerm) => {
-  
-    console.log(`Searching for: ${searchTerm}`);
-  };
+ 
   
   return (
     
-    <AppBar position="static" style={{ backgroundColor: '#ff9800' }}>
+    <AppBar position="static" style={{ backgroundColor: '#E5E5E5' }}>
       <Toolbar>
+      
+
         <Typography variant="h6" style={{ flexGrow: 1, fontFamily: 'cursive' }}>
-          Sweet Slices
+          <Link to='/'>
+          <img src='/images/greylogo.png' alt='logo' />
+          </Link>
         </Typography>
         <NavigationMenu/>
-        <SearchBar onSearch={handleSearch}/>
+        <SearchBar />
         <IconButton color="inherit" style={{ marginLeft: '16px' }}>
           <Link to='/Cart' ><ShoppingCartIcon /></Link>
         </IconButton>

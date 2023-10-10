@@ -10,7 +10,7 @@ function NavigationMenu() {
       <Tabs value={false} aria-label="navigation tabs">
         <Tab label={<Link to="/">Home</Link>} />
         <Tab label={<Link to="/products">Products</Link>} />
-        <Tab label={<Link to="/favorites">Favorites</Link>} />
+        <Tab label={<Link to="/about">About</Link>} />
       </Tabs>
     </div>
   );

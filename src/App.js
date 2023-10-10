@@ -9,6 +9,7 @@ import Layout from './pages/Layout';
 import { CartItemsProvider } from './components/CartItems/CartItems';
 import SignUp from './pages/SignUp';
 import SignIn from './pages/SignIn';
+import AboutPage from './pages/About/AboutPage ';
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path='/signUp' element={<SignUp/>} />
         <Route path='/signIn' element={<SignIn/>} />
-
+        <Route path='/about' element={<AboutPage/>} />
       </Routes>
       </CartItemsProvider>
       </Layout>

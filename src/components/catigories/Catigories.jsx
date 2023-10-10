@@ -1,16 +1,28 @@
-import React from 'react'
-import './catigories.css'
+import React from 'react';
+import './catigories.css';
+import { Link } from 'react-router-dom';
 
 const Catigories = () => {
   return (
     <div className='catigories'>
-        <div className=' one'></div>
-        <div className=' two'></div>
-        <div className=' three'></div>
-        <div className=' four'></div>
-
+      <Link to='/products#category-cake'>
+        <div className='three category'>
+        </div>
+      </Link>
+      <Link to='/products#category-cheesecake'>
+        <div className='two category'>
+        </div>
+      </Link> 
+      <Link to='/products#category-cupcake'>
+        <div className='one category'>
+        </div>
+      </Link>
+      <Link to='/products#category-cookie'>
+        <div className='four category'>
+        </div>
+      </Link>
     </div>
-  )
-}
+  );
+};
 
-export default Catigories
+export default Catigories;
