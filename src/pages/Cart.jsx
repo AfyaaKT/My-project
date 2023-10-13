@@ -16,7 +16,7 @@ function Cart() {
   };
 
   return (
-    <div className='cart-container'>
+    <div className='cart-container' >
       <h2>Your Cart</h2>
       {cartItems.length === 0 ? (
         <p>Your cart is empty.</p>
@@ -33,7 +33,7 @@ function Cart() {
               >
                 <CardMedia
                   sx={{ height: 300 }}
-                  image={item.imageUrl}
+                  image={item.imgUrl}
                   title={item.name}
                 />
                 <CardContent sx={{ flexGrow: 1 }}>

@@ -1,13 +1,12 @@
-import React from 'react';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import './products.css'
 
-function Product({ name, description, price, imageUrl , onAddToCart }) {
+function Product({ name, description, price, imgUrl  }) {
+ 
+  
   return (
     <Card className='product'
       sx={{
@@ -18,7 +17,7 @@ function Product({ name, description, price, imageUrl , onAddToCart }) {
     >
       <CardMedia
         sx={{ height: 240 }}
-        image={imageUrl}
+        image={imgUrl}
         title={name}
       />
       <CardContent sx={{ flexGrow: 1 }}>
@@ -32,16 +31,7 @@ function Product({ name, description, price, imageUrl , onAddToCart }) {
           Price: ${price}
         </Typography>
       </CardContent>
-      <CardActions>
-      <Button
-          variant='contained'
-          size='small'
-          color='primary'
-          onClick={() => onAddToCart({ name, price , imageUrl , description })}
-        >
-          Add to Cart
-        </Button>
-      </CardActions>
+      
     </Card>
   );
 }

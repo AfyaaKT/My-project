@@ -2,7 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    margin-top: 50px ;
+    margin-bottom: 50px;
 }
 .one{
     background-image: url('/public/images/catigory.jpg');

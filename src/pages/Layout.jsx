@@ -6,7 +6,7 @@ export default function Layout({children}) {
   return (
     <div>
      <Header/>
-     <div className='middle' style={{height:"150vh"}}>
+     <div className='middle'>
      
        {children}
      </div>

@@ -1,36 +1,36 @@
-import { createContext } from "react";
-import { useState } from "react";
+import React, { createContext, useState } from 'react';
 
 const Context = createContext();
 
-export const CartItemsProvider = ({children}) => {
+export const CartItemsProvider = ({ children }) => {
+  const [cartItems, setCartItems] = useState([]);
+  const [favoriteItems, setFavoriteItems] = useState([]);
 
-    const [cartItems, setCartItems]=useState([])
-
-    const addToCart = (product) => {
-        setCartItems([...cartItems, product]);
-      };
-
-      const removeFromCart = (index) => {
-        const updatedCart = [...cartItems];
-        updatedCart.splice(index, 1);
-        setCartItems(updatedCart);
-      };  
-      const [open, setOpen] = useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
+  const addToFavorites = (product) => {
+    setFavoriteItems([...favoriteItems, product]);
   };
 
-  const handleClose = () => {
-    setOpen(false);
+  const removeFromFavorites = (index) => {
+    const updatedFavorites = [...favoriteItems];
+    updatedFavorites.splice(index, 1);
+    setFavoriteItems(updatedFavorites);
   };
 
-    return(
-        <Context.Provider value={{cartItems , setCartItems , addToCart , removeFromCart , open , setOpen ,
-        handleClose , handleClickOpen}}>
-            {children}
-        </Context.Provider>
-    )
-}
+  const addToCart = (product) => {
+    setCartItems([...cartItems, product]);
+  };
+
+  const removeFromCart = (index) => {
+    const updatedCart = [...cartItems];
+    updatedCart.splice(index, 1);
+    setCartItems(updatedCart);
+  };
+
+  return (
+    <Context.Provider value={{ cartItems, setCartItems, addToCart, removeFromCart, favoriteItems, addToFavorites, removeFromFavorites }}>
+      {children}
+    </Context.Provider>
+  );
+};
+
 export default Context;

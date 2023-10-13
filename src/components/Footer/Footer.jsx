@@ -2,7 +2,7 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import Link from '@mui/material/Link';
+import { Link } from 'react-router-dom';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import './Footer.css'
@@ -28,22 +28,22 @@ const Footer = () => {
           <Grid item>
             <ul style={{ listStyle: 'none', padding: 0, display: 'flex' }}>
               <li style={{ marginRight: '20px' }}>
-                <Link href="/" color="inherit" style={style}>
+                <Link to="/" color="inherit" style={style}>
                   Home
                 </Link>
               </li>
               <li style={{ marginRight: '20px' }}>
-                <Link href="/about" color="inherit" style={style}>
+                <Link to="/about" color="inherit" style={style}>
                   About
                 </Link>
               </li>
               <li style={{ marginRight: '20px' }}>
-                <Link href="/products" color="inherit" style={style}>
+                <Link to="/products" color="inherit" style={style}>
                   Products
                 </Link>
               </li>
               <li style={{ marginRight: '20px' }}>
-                <Link href="#" color="inherit" style={style}>
+                <Link to="#" color="inherit" style={style}>
                   Contact
                 </Link>
               </li>

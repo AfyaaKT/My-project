@@ -1,19 +1,35 @@
 import React from 'react';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import './NavigationMenu.css';
-import { Link } from 'react-router-dom'; 
+import { NavLink } from 'react-router-dom';
+import './NavigationMenu.css'
+const NavigationMenu = () => {
+  const Sections = [
+    { path: "/", name: "Home" },
+    { path: "/products", name: "Products" },
+    { path: "/about", name: "About Us" },
+    { path: "/favorites", name: "Favorites" },
+  ];
 
-function NavigationMenu() {
   return (
-    <div className="navigation-menu">
-      <Tabs value={false} aria-label="navigation tabs">
-        <Tab label={<Link to="/">Home</Link>} />
-        <Tab label={<Link to="/products">Products</Link>} />
-        <Tab label={<Link to="/about">About</Link>} />
-      </Tabs>
+    <div className='navBar'>
+     
+      <div className='nav-elm'>
+        {Sections.map((section) => (
+          <NavLink
+            to={section.path}
+            className={(navData) =>
+                navData.isActive
+                 ? 'active-link'
+                 : 'nav-elm'
+               }
+              >
+
+           
+            {section.name}
+          </NavLink>
+        ))}
+      </div>
     </div>
   );
-}
+};
 
 export default NavigationMenu;

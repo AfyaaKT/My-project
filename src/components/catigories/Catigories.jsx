@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 const Catigories = () => {
   return (
     <div className='catigories'>
+      
       <Link to='/products#category-cake'>
         <div className='three category'>
         </div>

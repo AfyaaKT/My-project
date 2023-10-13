@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
@@ -12,7 +13,6 @@ import { Formik, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { auth } from '../firebase';
 import { createUserWithEmailAndPassword, sendEmailVerification } from '@firebase/auth';
-
 const validationSchema = Yup.object().shape({
   firstName: Yup.string()
     .min(3, 'Too short')
@@ -30,6 +30,8 @@ const validationSchema = Yup.object().shape({
 });
 
 function SignUp() {
+  const navigate = useNavigate();
+
   return (
     <Container maxWidth="xs">
       <Box
@@ -62,6 +64,8 @@ function SignUp() {
             } catch (error) {
               console.error('Error signing up:', error.message);
               alert('Error signing up. Please try again.');
+              navigate('/');
+
             }
           }}
           validationSchema={validationSchema}

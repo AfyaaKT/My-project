@@ -32,7 +32,7 @@ function SearchBar() {
     <div className="search-container">
       <input
         type="text"
-        placeholder="Search for cakes, cupcakes, cookies..."
+        placeholder="Search for cakes and more"
         value={query}
         onChange={handleInputChange}
       />
