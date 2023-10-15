@@ -1,65 +1,90 @@
 import React, { useContext } from 'react';
 import Context from '../components/CartItems/CartItems';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import './Cart.css';
+import { Link } from 'react-router-dom';
 
 function Cart() {
-  const { cartItems, removeFromCart } = useContext(Context);
+  const { cartItems, removeFromCart, addToCart } = useContext(Context);
 
   const calculateTotal = () => {
-    return cartItems.reduce((total, item) => total + item.price, 0).toFixed(2);
+    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
   };
 
+  const isCartEmpty = cartItems.length === 0;
+
   return (
-    <div className='cart-container' >
+    <div className="cart-container">
       <h2>Your Cart</h2>
-      {cartItems.length === 0 ? (
-        <p>Your cart is empty.</p>
+      {isCartEmpty ? (
+        <div>
+          <p>Your cart is empty.</p>
+          <Link to="/products">Browse Products</Link>
+        </div>
       ) : (
-        <div className='cart-items'>
+        <div className="cart-items">
           {cartItems.map((item, index) => (
-            <div key={index} className='cart-item'>
+            <div key={index} className="cart-item">
               <Card
-                className='product'
+                className="product"
                 sx={{
                   display: 'flex',
                   flexDirection: 'column',
                 }}
               >
-                <CardMedia
-                  sx={{ height: 300 }}
-                  image={item.imgUrl}
-                  title={item.name}
-                />
+                <CardMedia sx={{ height: 300 }} image={item.imgUrl} title={item.name} />
                 <CardContent sx={{ flexGrow: 1 }}>
-                  <Typography gutterBottom variant='h5' component='div'>
+                  <Typography gutterBottom variant="h5" component="div">
                     {item.name}
                   </Typography>
-                  <Typography variant='body2' color='text.secondary'>
+                  <Typography variant="body2" color="text.secondary">
                     {item.description}
                   </Typography>
-                  <Typography variant='h6' color='text.primary'>
-                    Price: ${item.price}
+                  <Typography variant="h6" color="text.primary">
+                    Price: ${item.price} per item
                   </Typography>
+                  <div className="quantity-counter">
+                    <Button
+                      variant="outlined"
+                      size="small"
+                      color="primary"
+                      onClick={() => {
+                        if (item.quantity > 1) {
+                          removeFromCart(item.id);
+                        }
+                      }}
+                    >
+                      -
+                    </Button>
+                    <span style={{ margin: '10px' }}>{item.quantity}</span>
+                    <Button
+                      variant="outlined"
+                      size="small"
+                      color="primary"
+                      onClick={() => addToCart(item)}
+                    >
+                      +
+                    </Button>
+                  </div>
                 </CardContent>
-                <CardActions>
-                  <Button
-                    variant='contained'
-                    size='small'
-                    color='primary'
-                    onClick={() => removeFromCart(index)}
-                  >
-                    Remove
-                  </Button>
-                </CardActions>
               </Card>
             </div>
           ))}
+        </div>
+      )}
+      {!isCartEmpty && (
+        <div className="checkout-button-container">
+      <Link to='/checkout'>
+      <Button variant="contained" color="primary" >
+            Checkout
+          </Button>
+      </Link>
+
+         
         </div>
       )}
       <p>Total: ${calculateTotal()}</p>

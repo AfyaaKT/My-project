@@ -17,12 +17,22 @@ export const CartItemsProvider = ({ children }) => {
   };
 
   const addToCart = (product) => {
-    setCartItems([...cartItems, product]);
+    // Check if the product is already in the cart
+    const existingProductIndex = cartItems.findIndex((item) => item.id === product.id);
+
+    if (existingProductIndex !== -1) {
+      // If the product already exists, update its quantity
+      const updatedCart = [...cartItems];
+      updatedCart[existingProductIndex].quantity += 1;
+      setCartItems(updatedCart);
+    } else {
+      // If the product is not in the cart, add it with quantity 1
+      setCartItems([...cartItems, { ...product, quantity: 1 }]);
+    }
   };
 
-  const removeFromCart = (index) => {
-    const updatedCart = [...cartItems];
-    updatedCart.splice(index, 1);
+   const removeFromCart = (productId) => {
+    const updatedCart = cartItems.filter((item) => item.id !== productId);
     setCartItems(updatedCart);
   };
 

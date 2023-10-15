@@ -5,6 +5,7 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import CakeIcon from '@mui/icons-material/Cake';
+import BestSeller from '../../components/BestSeller/BestSeller';
 
 const AboutPage = () => {
   return (
@@ -28,7 +29,7 @@ const AboutPage = () => {
           <Typography variant="body1">
             Our commitment to quality and flavor shines through in every bite, and we're delighted to share our creations with you.
             <br /><br />
-            Thank you for choosing Fake Store, where every treat is a work of art and a labor of love.
+            Thank you for choosing Sweet Slices, where every treat is a work of art and a labor of love.
           </Typography>
         </Grid>
         <Grid item xs={12} md={6}>
@@ -39,6 +40,7 @@ const AboutPage = () => {
           </Box>
         </Grid>
       </Grid>
+      <BestSeller/>
       <Box mt={4}>
         <Typography variant="h5" align="center" gutterBottom>
           What Sets Us Apart
@@ -46,14 +48,17 @@ const AboutPage = () => {
         <Typography variant="body1">
           <strong>Quality Ingredients:</strong> We use only the finest ingredients to ensure every treat is a delight for your taste buds.
         </Typography>
+        <br />
         <Typography variant="body1">
           <strong>Customization:</strong> Looking for something special? We offer customization options to make your treat unique.
         </Typography>
+        <br />
         <Typography variant="body1">
           <strong>Community Engagement:</strong> We're proud to be part of the local community, and we actively engage in charity events and initiatives.
         </Typography>
+        <br />
       </Box>
-      {/* You can add a Testimonials component here to showcase customer reviews */}
+      
     </Container>
   );
 };

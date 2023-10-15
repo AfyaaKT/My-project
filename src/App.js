@@ -11,6 +11,8 @@ import SignUp from './pages/SignUp';
 import SignIn from './pages/SignIn';
 import AboutPage from './pages/About/AboutPage ';
 import ProductDetails from './pages/Product Details/ProductDetails'
+import BestSeller from './components/BestSeller/BestSeller';
+import Checkout from './components/Checkout/Checkout';
 
 function App() {
   return (
@@ -26,6 +28,9 @@ function App() {
         <Route path='/signIn' element={<SignIn/>} />
         <Route path='/about' element={<AboutPage/>} />
         <Route path='/products/:productId' element={<ProductDetails/>} />
+        <Route path='/product-details/:productId' element={<ProductDetails/>} />
+        <Route path='/bestSeller' element={<BestSeller/>} />
+        <Route path='/checkout' element={<Checkout/>} />
 
       </Routes>
       </CartItemsProvider>

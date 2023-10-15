@@ -15,6 +15,7 @@
   justify-content: center;
   gap: 40px; /* Adjust the gap between categories */
   margin-top: 20px;
+  margin: 30px;
 }
 
 /* Style the product grid */
@@ -27,6 +28,7 @@
 .product {
   max-width: 345px;
   transition: transform 0.2s ease-in-out;
+  margin: 30px;
 }
 
 .product:hover {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './searchbar.css'; 
-
 import { data } from '../../data'; 
+import { Link } from 'react-router-dom';
 
 function SearchBar() {
   const [query, setQuery] = useState('');
@@ -10,7 +10,7 @@ function SearchBar() {
   const handleInputChange = (e) => {
     const inputValue = e.target.value;
     setQuery(inputValue);
-  
+
     const results = data.filter((product) => {
       if (product.title && inputValue) {
         const productName = product.title.toLowerCase();
@@ -19,14 +19,9 @@ function SearchBar() {
       }
       return false;
     });
-  
-    console.log('Input Value:', inputValue);
-    console.log('Search Results:', results);
-  
+
     setSearchResults(results);
   };
-  
-  
 
   return (
     <div className="search-container">
@@ -38,11 +33,11 @@ function SearchBar() {
       />
       {searchResults.length > 0 && (
         <div className="search-results">
-          {searchResults.map((product,index) => (
-            <div key={index} className="search-result-item">
+          {searchResults.map((product, index) => (
+            <Link to={`/product-details/${product.id}`} key={index} className="search-result-item">
               <img src={product.imgUrl} alt={product.title} className='img' />
               <h1>{product.title}</h1>
-            </div>
+            </Link>
           ))}
         </div>
       )}

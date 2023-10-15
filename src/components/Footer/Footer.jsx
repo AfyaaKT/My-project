@@ -17,6 +17,7 @@ const Footer = () => {
       bgcolor="#E5E5E5" 
       color="#18A0FB" 
       py={2} 
+      className='footer'
     >
       <Container>
         <Grid container justifyContent="space-between" alignItems="center">
