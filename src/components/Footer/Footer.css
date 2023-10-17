@@ -1,11 +1,18 @@
-.link {
-  text-decoration: none;
-  
-}
+
 img{
   height: 50px;
   width: 120px;
 }
 .footer{
-margin-top: auto;
+margin-top: 50vh;
+ @media (max-width: 768px) {
+    margin-top: 20vh; /* You can adjust this value as needed for responsiveness */
+  }
+  @media (max-width: 480px) {
+    margin-top: 30vh; /* Adjust for even smaller screens */
+  }
+}
+a{
+  text-decoration: none;
+  color: #18A0FB;
 }

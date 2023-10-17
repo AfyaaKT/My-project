@@ -31,13 +31,30 @@ export const CartItemsProvider = ({ children }) => {
     }
   };
 
-   const removeFromCart = (productId) => {
-    const updatedCart = cartItems.filter((item) => item.id !== productId);
-    setCartItems(updatedCart);
+  //  const removeFromCart = (productId) => {
+  //   const updatedCart = cartItems.filter((item) => item.id !== productId);
+  //   setCartItems(updatedCart);
+  // };
+  const removeFromCart = (productId) => {
+    const updatedCart = [...cartItems];
+    const productIndex = updatedCart.findIndex((item) => item.id === productId);
+  
+    if (productIndex !== -1) {
+      // If the product is already in the cart and its quantity is greater than 1, decrement the quantity
+      if (updatedCart[productIndex].quantity > 1) {
+        updatedCart[productIndex].quantity -= 1;
+        setCartItems(updatedCart);
+      } else {
+        // If the quantity is 1, remove the item from the cart
+        updatedCart.splice(productIndex, 1);
+        setCartItems(updatedCart);
+      }
+    }
   };
+  
 
   return (
-    <Context.Provider value={{ cartItems, setCartItems, addToCart, removeFromCart, favoriteItems, addToFavorites, removeFromFavorites }}>
+    <Context.Provider value={{ cartItems, setCartItems, addToCart, removeFromCart , favoriteItems, addToFavorites, removeFromFavorites }}>
       {children}
     </Context.Provider>
   );

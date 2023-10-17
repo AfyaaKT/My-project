@@ -21,7 +21,7 @@ function Product({ name, description, price, imgUrl  }) {
         title={name}
       />
       <CardContent sx={{ flexGrow: 1 }}>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="h6" component="div">
           {name}
         </Typography>
         <Typography variant="body2" color="text.secondary">

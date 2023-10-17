@@ -6,36 +6,7 @@ import { Button, Card, CardContent, CardMedia, Typography } from '@mui/material'
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import Context from '../../components/CartItems/CartItems';
-
-const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    padding: '20px',
-  },
-  card: {
-    maxWidth: 800, // Increased the card width to accommodate the layout
-    display: 'flex', // Use flex to arrange the image and details side by side
-  },
-  media: {
-    width: 400, // Adjusted the width of the image
-    height: 400,
-  },
-  detailsContainer: {
-    flex: 1, // Allow details to take up remaining space
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between', // Align details and buttons vertically
-  },
-  buttonContainer: {
-    display: 'flex',
-    justifyContent: 'space-between', // Arrange buttons side by side
-  },
-  button: {
-    margin: '10px',
-  },
-};
+import './ProductDetails.css'; // Import the CSS file
 
 function ProductDetails() {
   const { productId } = useParams();
@@ -57,12 +28,12 @@ function ProductDetails() {
   };
 
   return (
-    <div style={styles.container}>
+    <div className="container">
       <h2>Product Details</h2>
       {product ? (
-        <Card style={styles.card}>
-          <CardMedia style={styles.media} image={product.imgUrl} title={product.name} />
-          <CardContent style={styles.detailsContainer}>
+        <Card className="card"> 
+          <CardMedia className="media" image={product.imgUrl} title={product.name} /> 
+          <CardContent className="detailsContainer"> 
             <div>
               <Typography variant="h5" component="div">
                 {product.title}
@@ -80,11 +51,11 @@ function ProductDetails() {
                 Price: ${product.price}
               </Typography>
             </div>
-            <div style={styles.buttonContainer}>
-              <Button variant="contained" color="primary" style={styles.button} onClick={handleAddToCart}>
+            <div className="buttonContainer"> 
+              <Button variant="contained" color="primary" className="button" onClick={handleAddToCart}> 
                 Add to Cart
               </Button>
-              <Button variant="outlined" style={styles.button} onClick={handleToggleFavorite}>
+              <Button variant="outlined" className="button" onClick={handleToggleFavorite}> 
                 {isFavorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
                 Add to Favorites
               </Button>

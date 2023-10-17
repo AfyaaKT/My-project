@@ -5,7 +5,7 @@ import Home from './pages/Home';
 import Cart from './pages/Cart';
 import Favorites from './pages/Favorites';
 import Products from './components/Products/Products';
-import Layout from './pages/Layout';
+import Layout from './pages/Layout/Layout';
 import { CartItemsProvider } from './components/CartItems/CartItems';
 import SignUp from './pages/SignUp';
 import SignIn from './pages/SignIn';

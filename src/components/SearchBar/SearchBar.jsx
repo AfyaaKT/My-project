@@ -6,6 +6,11 @@ import { Link } from 'react-router-dom';
 function SearchBar() {
   const [query, setQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
 
   const handleInputChange = (e) => {
     const inputValue = e.target.value;
@@ -34,7 +39,7 @@ function SearchBar() {
       {searchResults.length > 0 && (
         <div className="search-results">
           {searchResults.map((product, index) => (
-            <Link to={`/product-details/${product.id}`} key={index} className="search-result-item">
+            <Link to={`/product-details/${product.id}`} key={index} className="search-result-item" onClick={handleMenuClose}>
               <img src={product.imgUrl} alt={product.title} className='img' />
               <h1>{product.title}</h1>
             </Link>

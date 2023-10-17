@@ -7,9 +7,10 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import './Cart.css';
 import { Link } from 'react-router-dom';
+import { CardActions } from '@mui/material';
 
 function Cart() {
-  const { cartItems, removeFromCart, addToCart } = useContext(Context);
+  const { cartItems, removeFromCart, addToCart   } = useContext(Context);
 
   const calculateTotal = () => {
     return cartItems.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
@@ -17,11 +18,15 @@ function Cart() {
 
   const isCartEmpty = cartItems.length === 0;
 
+
+  
+
   return (
     <div className="cart-container">
       <h2>Your Cart</h2>
       {isCartEmpty ? (
         <div>
+          {/* <img src='/images/cart1.png' style={{width:'250px', height:'300px'}} alt='Cart'/> */}
           <p>Your cart is empty.</p>
           <Link to="/products">Browse Products</Link>
         </div>
@@ -39,7 +44,7 @@ function Cart() {
                 <CardMedia sx={{ height: 300 }} image={item.imgUrl} title={item.name} />
                 <CardContent sx={{ flexGrow: 1 }}>
                   <Typography gutterBottom variant="h5" component="div">
-                    {item.name}
+                    {item.title}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
                     {item.description}
@@ -48,15 +53,12 @@ function Cart() {
                     Price: ${item.price} per item
                   </Typography>
                   <div className="quantity-counter">
+                    <CardActions sx={{ justifyContent: 'center' }}>
                     <Button
                       variant="outlined"
                       size="small"
                       color="primary"
-                      onClick={() => {
-                        if (item.quantity > 1) {
-                          removeFromCart(item.id);
-                        }
-                      }}
+                      onClick={() => removeFromCart(item.id)}
                     >
                       -
                     </Button>
@@ -69,7 +71,12 @@ function Cart() {
                     >
                       +
                     </Button>
+
+                    </CardActions>
+                    
+
                   </div>
+                  
                 </CardContent>
               </Card>
             </div>

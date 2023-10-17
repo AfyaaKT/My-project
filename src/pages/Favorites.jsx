@@ -27,7 +27,7 @@ function Favorites() {
               <CardContent>
                 
                 <Typography variant='h5' component='div'>
-                  {item.name}
+                  {item.title}
                 </Typography>
                 <Typography variant='body2' color='text.secondary'>
                   {item.description}
@@ -36,11 +36,11 @@ function Favorites() {
                   Price: ${item.price}
                 </Typography>
               </CardContent>
-              <CardActions>
+              <CardActions sx={{ justifyContent: 'center' }}>
                 <Button
-                  variant='contained'
+                  variant='outlined'
                   size='small'
-                  color='secondary'
+                  color='primary'
                   onClick={() => handleRemoveFromFavorites(index)}
                 >
                   Remove

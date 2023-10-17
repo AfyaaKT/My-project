@@ -9,6 +9,7 @@ import NavigationMenu from '../NavigationMenu/NavigationMenu';
 import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import './header.css';
+import NavMenu from '../Menu/NavMenu';
 
 function Header() {
   return (
@@ -16,13 +17,14 @@ function Header() {
       <Toolbar>
         <Typography variant="h6" style={{ flexGrow: 1, fontFamily: 'cursive' }}>
           <Link to='/'>
-            <img src='/images/greylogo.png' alt='logo' />
+            <img src='/images/finalLogo.png' alt='logo' style={{width:'140px', height:'40px'}} />
           </Link>
         </Typography>
-        <NavigationMenu />
+        {window.innerWidth > 1024 ? <NavigationMenu /> : <NavMenu />}
+
         <SearchBar />
 
-        <div style={{ marginLeft: '30px' }}> {/* Add margin for space */}
+        <div style={{ marginLeft: '30px' }}> 
           <IconButton color="inherit">
             <Link to='/Cart'>
               <ShoppingCartIcon />
@@ -31,7 +33,6 @@ function Header() {
         </div>
         
         <IconButton color="inherit">
-          {/* AccountCircleIcon */}
         </IconButton>
         <Link to='/signUp'>
           <Button variant="outlined" size="small">

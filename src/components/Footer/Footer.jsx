@@ -2,6 +2,8 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import { Link } from 'react-router-dom';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
@@ -12,6 +14,9 @@ const Footer = () => {
     textDecoration:"none"
 
   }
+  // Inside your functional component
+const theme = useTheme();
+const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   return (
     <Box
       bgcolor="#E5E5E5" 
@@ -20,10 +25,10 @@ const Footer = () => {
       className='footer'
     >
       <Container>
-        <Grid container justifyContent="space-between" alignItems="center">
-          <Grid item>
+        <Grid container justifyContent={isSmallScreen ? 'center' : 'space-between'} alignItems="center">
+          <Grid item >
             <Link href = '/'>
-            <img src='/images/greylogo.png' alt='logo' />
+            <img src='/images/finalLogo.png' alt='logo' style={{width:'140px', height:'40px'}} />
             </Link>
           </Grid>
           <Grid item>
@@ -50,16 +55,24 @@ const Footer = () => {
               </li>
             </ul>
           </Grid>
-          <Grid item>
-            <div>
-              <p style={{ margin: 0 }}>
+          <Grid item >
+            <div className='contact'>
+              <p style={{margin:0}} >
+              <a href="https://wa.me/9647733414774?text=Welcome%20to%20Sweet%20Slices'%20support%20team,%20how%20can%20I%20help%20you?" target="_blank"  rel="noreferrer" >
                 <PhoneIcon fontSize="small" style={{ verticalAlign: 'middle', marginRight: '4px' }} />
-                <span>123-456-7890</span>
+                <span>Chat On WhatsApp</span>
+                
+              </a>
               </p>
-              <p style={{ margin: 0 }}>
+              
+              <p style={{margin:0}}>
+                 <a href="mailto:afyaakhudur@gmail.com" >
                 <EmailIcon fontSize="small" style={{ verticalAlign: 'middle', marginRight: '4px' }} />
                 <span>SweetSlices@gmail.com</span>
-              </p>
+                </a></p>
+               
+                
+              
             </div>
           </Grid>
         </Grid>
