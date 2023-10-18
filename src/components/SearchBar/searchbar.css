@@ -13,7 +13,7 @@ input[type="text"] {
   outline: none;
 }
 
-.search-results {
+/* .search-results {
   position: absolute;
   top: 100%;
   left: 0;
@@ -23,14 +23,14 @@ input[type="text"] {
   border-radius: 4px;
   z-index: 1;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
+} */
 
 .img{
   width: 30px;
   height: 30px;
   margin-right: 10px;
 }
-.search-result-item {
+/* .search-result-item {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,15 +41,58 @@ input[type="text"] {
  
 
   
-}
+} */
 h1 {
   margin: 0;
   font-size: 14px;
   color: black;
 
 }
-@media only screen and (max-width:525px){
-  .search-results{
+.search-results {
+  max-height: 300px; /* Adjust the maximum height based on your preference */
+  overflow-y: auto; /* Add a vertical scrollbar when needed */
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  z-index: 1;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Adjust styles for the items in the scrollable area */
+.search-result-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer; /* Add a pointer cursor for scrollable items */
+}
+
+@media screen and (max-width: 500px) {
+  input[type="text"] {
+    width: 80%; /* Reduce the width of the input */
+  }
+
+  .search-results {
+    width: 80%; /* Reduce the width of the search results */
+  }
+  .search-container{
     max-width: 100%;
+  }
+
+  .img {
+    display: none;
+  }
+
+  .search-result-item {
+    padding: 5px; /* Reduce padding for smaller screens */
+  }
+
+  h1 {
+    font-size: 8px; /* Reduce font size for smaller screens */
   }
 }
