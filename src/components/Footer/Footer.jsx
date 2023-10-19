@@ -14,7 +14,6 @@ const Footer = () => {
     textDecoration:"none"
 
   }
-  // Inside your functional component
 const theme = useTheme();
 const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   return (
@@ -49,8 +48,8 @@ const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
                 </Link>
               </li>
               <li style={{ marginRight: '20px' }}>
-                <Link to="#" color="inherit" style={style}>
-                  Contact
+                <Link to="/favorites" color="inherit" style={style}>
+                  Favorites
                 </Link>
               </li>
             </ul>
@@ -58,7 +57,7 @@ const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
           <Grid item >
             <div className='contact'>
               <p style={{margin:0}} >
-              <a href="https://wa.me/9647733414774?text=Welcome%20to%20Sweet%20Slices'%20support%20team,%20how%20can%20I%20help%20you?" target="_blank"  rel="noreferrer" >
+              <a href="https://wa.me/9647733414774?text=Hi,%20I%20want%20to%20order%20a%20cake%20on%20weekend." target="_blank"  rel="noreferrer" >
                 <PhoneIcon fontSize="small" style={{ verticalAlign: 'middle', marginRight: '4px' }} />
                 <span>Chat On WhatsApp</span>
                 

@@ -26,7 +26,6 @@ function Cart() {
       <h2>Your Cart</h2>
       {isCartEmpty ? (
         <div>
-          {/* <img src='/images/cart1.png' style={{width:'250px', height:'300px'}} alt='Cart'/> */}
           <p>Your cart is empty.</p>
           <Link to="/products">Browse Products</Link>
         </div>
@@ -85,11 +84,16 @@ function Cart() {
       )}
       {!isCartEmpty && (
         <div className="checkout-button-container">
-      <Link to='/checkout'>
-      <Button variant="contained" color="primary" >
+           <Link to='/signUp' onClick={()=>alert('you have to sign up first')}>
+          <Button variant="contained" color="primary">
+          Checkout
+          </Button>
+        </Link>
+      {/* <Link to='/checkout'>
+      <Button variant="contained" color="primary">
             Checkout
           </Button>
-      </Link>
+      </Link> */}
 
          
         </div>

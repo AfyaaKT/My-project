@@ -61,10 +61,11 @@ function SignUp() {
               const user = userCredential.user;
               await sendEmailVerification(user);
               alert('Success! Please verify your email');
+              navigate('/');
             } catch (error) {
               console.error('Error signing up:', error.message);
-              alert('Error signing up. Please try again.');
-              navigate('/');
+              // alert('Error signing up. Please try again.');
+             
 
             }
           }}

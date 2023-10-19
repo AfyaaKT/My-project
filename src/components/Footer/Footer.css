@@ -5,12 +5,7 @@ img{
 }
 .footer{
 margin-top: 50vh;
- @media (max-width: 768px) {
-    margin-top: 20vh; /* You can adjust this value as needed for responsiveness */
-  }
-  @media (max-width: 480px) {
-    margin-top: 30vh; /* Adjust for even smaller screens */
-  }
+
 }
 a{
   text-decoration: none;

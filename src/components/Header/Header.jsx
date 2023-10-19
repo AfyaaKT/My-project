@@ -17,7 +17,9 @@ function Header() {
       <Toolbar>
         <Typography variant="h6" style={{ flexGrow: 1, fontFamily: 'cursive' }}>
           <Link to='/'>
-            <img src='/images/finalLogo.png' alt='logo' style={{width:'140px', height:'40px'}} />
+          {window.innerWidth > 650 ?
+           <img src='/images/finalLogo.png' alt='logo' style={{width:'140px', height:'40px'}} />
+           :  <img src='/images/slice.png' alt='logo' style={{width:'40px', height:'40px'}} />}
           </Link>
         </Typography>
         {window.innerWidth > 1024 ? <NavigationMenu /> : <NavMenu />}
@@ -32,13 +34,8 @@ function Header() {
           </IconButton>
         </div>
         
-        <IconButton color="inherit">
-        </IconButton>
-        <Link to='/signUp'>
-          <Button variant="outlined" size="small">
-            Sign up
-          </Button>
-        </Link>
+       
+       
       </Toolbar>
     </AppBar>
   );
