@@ -6,12 +6,12 @@ import { Button, Card, CardContent, CardMedia, Typography } from '@mui/material'
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import Context from '../../components/CartItems/CartItems';
-import './ProductDetails.css'; // Import the CSS file
+import './ProductDetails.css';
 
 function ProductDetails() {
   const { productId } = useParams();
   const product = data.find((item) => item.id === parseInt(productId));
-  const { addToCart, addToFavorites, favoriteItems, removeFromFavorites } = useContext(Context);
+  const { addToCart, addToFavorites ,isAdded, favoriteItems, removeFromFavorites } = useContext(Context);
 
   const isFavorite = favoriteItems.some((item) => item.id === parseInt(productId));
 
@@ -52,10 +52,30 @@ function ProductDetails() {
               </Typography>
             </div>
             <div className="buttonContainer"> 
-              <Button variant="contained" color="primary" className="button" onClick={handleAddToCart}> 
-                Add to Cart
-              </Button>
-              <Button variant="outlined" className="button" onClick={handleToggleFavorite}> 
+            {isAdded[product.id]?
+            <Button variant="contained" 
+            size={window.innerWidth <= 868 ? 'small' : 'large'}
+            color="primary"
+             className="button"
+              disabled> 
+            Added
+          </Button>
+          : <Button
+            variant="contained"
+            size={window.innerWidth <= 868 ? 'small' : 'large'} 
+            color="primary"
+            className="button"
+            onClick={handleAddToCart}> 
+          Add to Cart
+        </Button>  }
+              
+              <Button
+               variant="outlined"
+               size={window.innerWidth <= 868 ? 'small' : 'large'} 
+               onClick={handleToggleFavorite}
+               className="button"
+
+               > 
                 {isFavorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
                 Add to Favorites
               </Button>

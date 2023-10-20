@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -7,11 +7,13 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SearchBar from '../SearchBar/SearchBar';
 import NavigationMenu from '../NavigationMenu/NavigationMenu';
 import { Link } from 'react-router-dom';
-import Button from '@mui/material/Button';
 import './header.css';
 import NavMenu from '../Menu/NavMenu';
+import Context from '../CartItems/CartItems';
+
 
 function Header() {
+  const {cartCount}=useContext(Context)
   return (
     <AppBar position="static" style={{ backgroundColor: '#E5E5E5' }}>
       <Toolbar>
@@ -28,8 +30,11 @@ function Header() {
 
         <div style={{ marginLeft: '30px' }}> 
           <IconButton color="inherit">
+
             <Link to='/Cart'>
               <ShoppingCartIcon />
+              {cartCount > 0 && <span className="red-dot">{cartCount}</span>}
+
             </Link>
           </IconButton>
         </div>

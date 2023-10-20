@@ -10,10 +10,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import './Footer.css'
 
 const Footer = () => {
-  const style={
-    textDecoration:"none"
-
-  }
+  
 const theme = useTheme();
 const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   return (
@@ -33,22 +30,22 @@ const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
           <Grid item>
             <ul style={{ listStyle: 'none', padding: 0, display: 'flex' }}>
               <li style={{ marginRight: '20px' }}>
-                <Link to="/" color="inherit" style={style}>
+                <Link to="/" color="inherit">
                   Home
                 </Link>
               </li>
               <li style={{ marginRight: '20px' }}>
-                <Link to="/about" color="inherit" style={style}>
+                <Link to="/about" color="inherit" >
                   About
                 </Link>
               </li>
               <li style={{ marginRight: '20px' }}>
-                <Link to="/products" color="inherit" style={style}>
+                <Link to="/products" color="inherit" >
                   Products
                 </Link>
               </li>
               <li style={{ marginRight: '20px' }}>
-                <Link to="/favorites" color="inherit" style={style}>
+                <Link to="/favorites"  >
                   Favorites
                 </Link>
               </li>

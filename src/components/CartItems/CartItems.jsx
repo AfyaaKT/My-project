@@ -3,8 +3,13 @@ import React, { createContext, useState } from 'react';
 const Context = createContext();
 
 export const CartItemsProvider = ({ children }) => {
+
   const [cartItems, setCartItems] = useState([]);
   const [favoriteItems, setFavoriteItems] = useState([]);
+  const [isAdded, setIsAdded] = useState({});
+  const [cartCount, setCartCount] = useState(0);
+
+
 
   const addToFavorites = (product) => {
     setFavoriteItems([...favoriteItems, product]);
@@ -28,13 +33,18 @@ export const CartItemsProvider = ({ children }) => {
     } else {
       // If the product is not in the cart, add it with quantity 1
       setCartItems([...cartItems, { ...product, quantity: 1 }]);
+
+      setCartCount((prevCount) => prevCount + 1);
+
+      setIsAdded((prevState) => ({
+        ...prevState,
+        [product.id]: true,
+      }));
+
     }
   };
 
-  //  const removeFromCart = (productId) => {
-  //   const updatedCart = cartItems.filter((item) => item.id !== productId);
-  //   setCartItems(updatedCart);
-  // };
+  
   const removeFromCart = (productId) => {
     const updatedCart = [...cartItems];
     const productIndex = updatedCart.findIndex((item) => item.id === productId);
@@ -49,12 +59,21 @@ export const CartItemsProvider = ({ children }) => {
         updatedCart.splice(productIndex, 1);
         setCartItems(updatedCart);
       }
+      const updatedCartCount = updatedCart.reduce(
+        (count, item) => count + item.quantity,
+        0
+      );
+      setCartCount(updatedCartCount);
+      setIsAdded((prevState) => ({
+        ...prevState,
+        [productId]: false,
+      }));
     }
   };
   
 
   return (
-    <Context.Provider value={{ cartItems, setCartItems, addToCart, removeFromCart , favoriteItems, addToFavorites, removeFromFavorites }}>
+    <Context.Provider value={{ cartItems, setCartItems, addToCart, removeFromCart,isAdded ,cartCount , favoriteItems, addToFavorites, removeFromFavorites }}>
       {children}
     </Context.Provider>
   );

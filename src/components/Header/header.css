@@ -5,5 +5,20 @@
     color: #18A0FB;
   }
 
+  .red-dot {
+    position: absolute;
+    top:-1px;
+    right: -1px;
+    width: 13px;
+    height: 13px;
+    background-color: red;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+  }
+  
  
   

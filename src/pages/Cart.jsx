@@ -89,11 +89,7 @@ function Cart() {
           Checkout
           </Button>
         </Link>
-      {/* <Link to='/checkout'>
-      <Button variant="contained" color="primary">
-            Checkout
-          </Button>
-      </Link> */}
+      
 
          
         </div>

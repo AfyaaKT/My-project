@@ -1,4 +1,3 @@
-// BestSeller.js
 
 import React from 'react';
 import './BestSeller.css';

@@ -11,7 +11,7 @@ function Favorites() {
 
   return (
     <div className='cart-container'>
-      <h1>Your Favorite Items</h1>
+      <h2>Your Favorite Items</h2>
       {favoriteItems.length === 0 ? (
         <p>No favorite items yet.</p>
       ) : (

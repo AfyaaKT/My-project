@@ -7,49 +7,21 @@
 }
 .one{
     background-image: url('/public/images/catigory3.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    margin: 50px;
+    
 }
 .two{
     background-image: url('/public/images/catigory2.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    margin: 50px;
+   
 }
 .three{
     background-image: url('/public/images/catigory1.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    margin: 50px;
+   
 }
+
 .four{
     background-image: url('/public/images/catigory4.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    margin: 50px;
+   
 }
-/* catigories.css */
 
 .catigories-container {
     display: flex;
@@ -60,7 +32,7 @@
   }
   
   .category-title {
-    font-size: 1.5rem; /* Adjust the font size as needed */
+    font-size: 2 rem; 
     margin-bottom: 10px;
   }
   
@@ -74,9 +46,9 @@
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 50%;
-    width: 180px; /* Adjust the width as needed */
-    height: 180px; /* Adjust the height as needed */
-    margin: 20px; /* Adjust the margin as needed */
+    width: 180px; 
+    height: 180px; 
+    margin: 50px; 
   }
   
   @media (max-width: 968px) {
