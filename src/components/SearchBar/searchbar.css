@@ -26,7 +26,7 @@ h1 {
 }
 .search-results {
   max-height: 300px; 
-  overflow-y: auto; /*  vertical scrollbar  */
+  overflow-y: auto; 
   width: 100%;
   position: absolute;
   top: 100%;
@@ -42,27 +42,27 @@ h1 {
   display: flex;
   padding: 10px;
   border-bottom: 1px solid #ccc;
-  cursor: pointer; /* Add a pointer cursor for scrollable items */
+  cursor: pointer; 
 }
 
 @media screen and (max-width: 500px) {
   input[type="text"] {
-    width: 80%; /* Reduce the width of the input */
+    width: 80%; 
   }
 
   .search-results {
-    width: 80%; /* Reduce the width of the search results */
+    width: 80%; 
     max-height: 200px;
   }
   .search-container{
     max-width: 100%;
   }
   .search-result-item {
-    padding: 5px; /* Reduce padding for smaller screens */
+    padding: 5px; 
   }
 
   h1 {
-    font-size: 8px; /* Reduce font size for smaller screens */
+    font-size: 8px; 
   }
 }
 @media screen and (max-width: 300px){

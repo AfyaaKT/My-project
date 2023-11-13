@@ -22,16 +22,16 @@ export const CartItemsProvider = ({ children }) => {
   };
 
   const addToCart = (product) => {
-    // Check if the product is already in the cart
+
     const existingProductIndex = cartItems.findIndex((item) => item.id === product.id);
 
     if (existingProductIndex !== -1) {
-      // If the product already exists, update its quantity
+
       const updatedCart = [...cartItems];
       updatedCart[existingProductIndex].quantity += 1;
       setCartItems(updatedCart);
     } else {
-      // If the product is not in the cart, add it with quantity 1
+
       setCartItems([...cartItems, { ...product, quantity: 1 }]);
 
       setCartCount((prevCount) => prevCount + 1);
@@ -50,12 +50,12 @@ export const CartItemsProvider = ({ children }) => {
     const productIndex = updatedCart.findIndex((item) => item.id === productId);
   
     if (productIndex !== -1) {
-      // If the product is already in the cart and its quantity is greater than 1, decrement the quantity
+
       if (updatedCart[productIndex].quantity > 1) {
         updatedCart[productIndex].quantity -= 1;
         setCartItems(updatedCart);
       } else {
-        // If the quantity is 1, remove the item from the cart
+
         updatedCart.splice(productIndex, 1);
         setCartItems(updatedCart);
       }

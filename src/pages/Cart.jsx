@@ -84,7 +84,7 @@ function Cart() {
       )}
       {!isCartEmpty && (
         <div className="checkout-button-container">
-           <Link to='/signUp' onClick={()=>alert('you have to sign up first')}>
+           <Link to='/signUp' >
           <Button variant="contained" color="primary">
           Checkout
           </Button>
